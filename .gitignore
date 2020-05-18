@@ -1,7 +1,7 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-/dist
+# /dist # keep /dist to allow deployment to gh-pages branch
 /tmp
 /out-tsc
 /__gen_lib
