@@ -1,6 +1,6 @@
 # ngx-easymde
 
-Angular for [EasyMDE](https://easymde.tk/), better use [ng-zorro-antd](https://ng.ant.design/) components.
+Angular for [EasyMDE](https://easymde.tk/) using [ng-zorro-antd](https://ng.ant.design/) components.
 
 [![NPM version](https://img.shields.io/npm/v/ngx-easymde.svg)](https://www.npmjs.com/package/ngx-easymde)
 [![Build Status](https://travis-ci.org/dmcbane/ngx-easymde.svg?branch=master)](https://travis-ci.org/dmcbane/ngx-easymde)
