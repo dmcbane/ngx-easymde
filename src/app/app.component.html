@@ -1,0 +1,37 @@
+<h1>
+  ngx-easymde
+</h1>
+<p class="mt-3 mb-3">Angular for EasyMDE</p>
+<h1>Demo</h1>
+<button (click)="isVisible = true" nz-button nzType="primary">
+  Open in modal
+</button>
+<easymde #easymde [(ngModel)]="demo"></easymde>
+<h1>Customize toolbar</h1>
+<easymde
+  [(ngModel)]="customize"
+  [options]="{ toolbar: ['bold', 'italic', 'heading', '|', 'quote'] }"
+></easymde>
+<h1>Autosaving</h1>
+<easymde [(ngModel)]="autoSaving" [options]="autoSavingOptions"></easymde>
+<h1>Hidden toolbar and status bar</h1>
+<easymde
+  [(ngModel)]="hiddenToolbar"
+  [options]="{ toolbar: false, status: false }"
+></easymde>
+<nz-modal
+  [(nzVisible)]="isVisible"
+  nzWidth="800"
+  nzTitle="The first Modal"
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate icon" href="/favicon.ico">  (nzOnCancel)="isVisible = false"
+  (nzOnOk)="isVisible = false"
+>
+  <easymde [(ngModel)]="demo"></easymde>
+</nz-modal>
+<h1>Reactive forms</h1>
+<form [formGroup]="f" (ngSubmit)="onSubmit()">
+  <easymde formControlName="text"></easymde>
+  <button nz-button nzType="primary" type="submit" [disabled]="f.invalid">Send</button>
+  <button nz-button type="button" (click)="setDisabledForForm()">Set Disabled</button>
+</form>

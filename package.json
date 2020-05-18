@@ -1,0 +1,87 @@
+{
+  "name": "ngx-easymde",
+  "version": "9.0.0",
+  "description": "Angular for easymde",
+  "author": "H. Dale McBane <h.dale.mcbane@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://dmcbane.github.io/ngx-easymde/",
+  "bugs": {
+    "url": "https://github.com/dmcbane/ngx-easymde/issues"
+  },
+  "keywords": [
+    "embeddable",
+    "markdown",
+    "editor",
+    "javascript",
+    "wysiwyg",
+    "ngx-easymde",
+    "easymde",
+    "angular",
+    "components",
+    "typescript"
+  ],
+  "scripts": {
+    "analyze": "ng build --prod --build-optimizer --stats-json",
+    "build": "node scripts/build.js",
+    "lint": "tslint -p tsconfig.json -c tslint.json 'lib/*/*.ts'",
+    "release": "npm run build && cd publish && npm publish --access public",
+    "release:next": "npm run build && cd publish && npm publish --access public --tag next",
+    "site:build": "ng build --prod --build-optimizer",
+    "site:gh": "ng build --prod --build-optimizer --base-href /ngx-easymde/ && gh-pages -d ./dist",
+    "start": "ng serve",
+    "test": "ng test --code-coverage --watch=false"
+  },
+  "dependencies": {
+    "easymde": "^2.10.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.901.6",
+    "@angular/animations": "~9.1.7",
+    "@angular/cli": "~9.1.6",
+    "@angular/common": "~9.1.7",
+    "@angular/compiler": "~9.1.7",
+    "@angular/compiler-cli": "~9.1.7",
+    "@angular/core": "~9.1.7",
+    "@angular/forms": "~9.1.7",
+    "@angular/language-service": "~9.1.7",
+    "@angular/platform-browser": "~9.1.7",
+    "@angular/platform-browser-dynamic": "~9.1.7",
+    "@angular/router": "~9.1.7",
+    "@types/jasmine": "~3.5.0",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
+    "codecov": "^3.6.5",
+    "codelyzer": "^5.1.2",
+    "jasmine-core": "~3.5.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "^5.0.5",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage-istanbul-reporter": "~2.1.0",
+    "karma-jasmine": "~2.0.1",
+    "karma-jasmine-html-reporter": "^1.4.2",
+    "ng-packagr": "^9.1.3",
+    "ng-zorro-antd": "^9.1.2",
+    "prettier": "^2.0.5",
+    "protractor": "^7.0.0",
+    "rxjs": "~6.5.4",
+    "ts-node": "~8.3.0",
+    "tslib": "^1.10.0",
+    "tslint": "~5.18.0",
+    "tslint-plugin-prettier": "^2.3.0",
+    "typescript": "~3.7.5",
+    "zone.js": "~0.10.2"
+  },
+  "ngPackage": {
+    "assets": [
+      "lib/styles",
+      "lib/index.less"
+    ],
+    "lib": {
+      "entryFile": "lib/index.ts"
+    },
+    "whitelistedNonPeerDependencies": [
+      "easymde"
+    ],
+    "dest": "./publish"
+  }
+}
