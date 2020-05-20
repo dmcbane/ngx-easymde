@@ -1,14 +1,14 @@
 export class EasymdeConfig {
   /**
-   * 风格，默认：`antd`
+   * style default
    */
-  style?: 'default' | 'antd' = 'antd';
+  style?: 'default';
   /**
-   * 延迟初始化
+   * delayed initialization
    */
   delay?: number;
   /**
-   * [Easymde configuration](https://github.com/sparksuite/easymde-markdown-editor#configuration)
+   * [Easymde configuration](https://github.com/Ionaru/easy-markdown-editor#configuration)
    */
   options?: EasymdeOptions;
 }
@@ -21,7 +21,7 @@ export interface EasymdeOptions {
    *
    * - **enabled**: If set to `true`, autosave the text. Defaults to `false`.
    * - **delay**: Delay between saves, in milliseconds. Defaults to `10000` (10s).
-   * - **uniqueId**: You must set a unique string identifier so that easymde can autosave. Something that separates this from other instances of easymde elsewhere on your website.
+   * - **uniqueId**: You must set a unique string identifier so that EasyMDE can autosave. Something that separates this from other instances of EasyMDE elsewhere on your website.
    */
   autosave?: { enabled?: boolean; uniqueId?: string; delay?: number };
 
@@ -35,7 +35,7 @@ export interface EasymdeOptions {
   blockStyles?: { bold?: string; code?: string; italic?: string };
 
   /**
-   * If set to `true`, force text changes made in easymde to be immediately stored in original textarea. Defaults to `false`.
+   * If set to `true`, force text changes made in EasyMDE to be immediately stored in original textarea. Defaults to `false`.
    */
   forceSync?: boolean;
 
@@ -88,8 +88,20 @@ export interface EasymdeOptions {
 
   /**
    * Adjust settings for parsing the Markdown during previewing (not editing).
-   * - **singleLineBreaks**: If set to `false`, disable parsing GFM single line breaks. Defaults to `true`.
-   * - **codeSyntaxHighlighting**: If set to `true`, will highlight using [highlight.js](https://github.com/isagalaev/highlight.js). Defaults to `false`. To use this feature you must include highlight.js on your page. For example, include the script and the CSS files like:<br>`<script src="https://cdn.jsdelivr.net/highlight.js/latest/highlight.min.js"></script>`<br>`<link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/latest/styles/github.min.css">`
+   *
+   *  - **singleLineBreaks**:
+   *    If set to `false`, disable parsing GFM single line breaks.
+   *    Defaults to `true`.
+   *
+   * - **codeSyntaxHighlighting**:
+   *    If set to `true`, will highlight using [highlight.js](https://github.com/isagalaev/highlight.js).
+   *    Defaults to `false`.
+   *
+   *    To use this feature you must include highlight.js on your page. For example,
+   *    include the script and the CSS files like:
+   *
+   *    <script src="https://cdn.jsdelivr.net/highlight.js/latest/highlight.min.js"></script>
+   *    <link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/latest/styles/github.min.css">
    */
   renderingConfig?: {
     singleLineBreaks?: boolean;

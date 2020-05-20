@@ -2,6 +2,7 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { EasymdeComponent } from 'ngx-easymde';
+import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
   selector: 'app-root',
@@ -26,7 +27,7 @@ You can also choose to hide the statusbar and/or toolbar for a simple and clean 
 
   f: FormGroup;
 
-  constructor(http: HttpClient, fb: FormBuilder) {
+  constructor(http: HttpClient, fb: FormBuilder, public ngxSmartModalService: NgxSmartModalService) {
     http
       .get('./assets/demo.md', { responseType: 'text' })
       .subscribe(res => (this.demo = res));

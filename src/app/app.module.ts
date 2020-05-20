@@ -5,10 +5,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { EasymdeModule } from 'ngx-easymde';
 
 import { AppComponent } from './app.component';
+import { NgxSmartModalModule } from 'ngx-smart-modal';
 
 @NgModule({
   imports: [
@@ -19,7 +19,7 @@ import { AppComponent } from './app.component';
     HttpClientModule,
     BrowserAnimationsModule,
     EasymdeModule.forRoot({}),
-    NgZorroAntdModule,
+    NgxSmartModalModule.forRoot(),
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],

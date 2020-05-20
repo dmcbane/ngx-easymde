@@ -21,12 +21,12 @@ yarn add ngx-easymde --save
 2. Import the `easymdeModule` in to your root `AppModule`.
 
 ```ts
-import { easymdeModule } from 'ngx-easymde';
+import { EasymdeModule } from 'ngx-easymde';
 
 @NgModule({
   imports: [
     BrowserModule,
-    easymdeModule.forRoot({
+    EasymdeModule.forRoot({
       // Global options
       autosave: { enabled: true, uniqueId: '007ebbb2-4705-4fb9-aed4-20327472b119' }
     })
@@ -37,14 +37,14 @@ import { easymdeModule } from 'ngx-easymde';
 export class AppModule { }
 ```
 
-3. Add `easymde-antd.min.js` and styles to `angular.json`.
+3. Add `easymde.min.js` and styles to `angular.json`.
 
 ```
 "styles": [
   "src/styles.less"
 ],
 "scripts": [
-  "node_modules/easymde-antd/dist/easymde.min.js"
+  "node_modules/easymde/dist/easymde.min.js"
 ]
 ```
 
@@ -67,7 +67,7 @@ export class AppModule { }
 
 ```ts
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { easymdeComponent, easymdeOptions } from 'ngx-easymde';
+import { EasymdeComponent, EasymdeOptions } from 'ngx-easymde';
 
 @Component({
   selector: 'app-root',
@@ -77,9 +77,9 @@ import { easymdeComponent, easymdeOptions } from 'ngx-easymde';
   `,
 })
 export class AppComponent implements OnInit {
-  @ViewChild('easymde', { static: true }) private readonly easymde: easymdeComponent;
+  @ViewChild('easymde', { static: true }) private readonly easymde: EasymdeComponent;
 
-  options: easymdeOptions = {
+  options: EasymdeOptions = {
     toolbar: ['bold', 'italic', 'heading', '|', 'quote']
   };
 

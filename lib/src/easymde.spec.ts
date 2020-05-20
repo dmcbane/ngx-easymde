@@ -2,8 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 
-import { EasymdeModule } from '../src/module';
-import { EasymdeComponent } from '../src/component';
+import { EasymdeModule } from './module';
+import { EasymdeComponent } from './component';
 import { By } from '@angular/platform-browser';
 
 describe('Component: ngx-easymde', () => {
@@ -35,12 +35,12 @@ describe('Component: ngx-easymde', () => {
     expect(context.comp.Instance.value).toHaveBeenCalled();
   }));
 
-  it('should be throw error when not found easymde object', () => {
+  it('should be throw error when not found EasyMDE object', () => {
     expect(() => {
-      delete (window as any).easymde;
+      delete (window as any).EasyMDE;
       context.options = {};
       fixture.detectChanges();
-    }).toThrowError(`Could not find easymde object.`);
+    }).toThrowError(`Could not find EasyMDE object.`);
   });
 
   class PageObject {

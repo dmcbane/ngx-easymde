@@ -16,7 +16,7 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 import { EasymdeConfig, EasymdeOptions } from './config';
 
-declare const easymde: any;
+declare const EasyMDE: any;
 
 @Component({
   selector: 'easymde',
@@ -41,9 +41,8 @@ export class EasymdeComponent
   private onChange: (value: string) => void;
 
   @Input() options: EasymdeOptions;
-  /** 风格，默认：`antd` */
-  @Input() style: 'default' | 'antd';
-  /** 延迟初始化 */
+  @Input() style: 'default';
+  /** delayed initialization */
   @Input() delay: number;
   @Input() disabled: boolean;
 
@@ -52,7 +51,8 @@ export class EasymdeComponent
   }
 
   /**
-   * Call [setOption](https://codemirror.net/doc/manual.html#setOption) method of Codemirror.
+   * Call [setOption](https://codemirror.net/doc/manual.html#setOption) method
+   * of Codemirror.
    */
   setOptions(option: string, value: any): void {
     if (!this.instance) return ;
@@ -74,24 +74,24 @@ export class EasymdeComponent
   }
 
   private init() {
-    if (typeof easymde === 'undefined') {
-      throw new Error(`Could not find easymde object.`);
+    if (typeof EasyMDE === 'undefined') {
+      throw new Error(`Could not find EasyMDE object.`);
     }
     this.destroy();
     const config = Object.assign(
       {},
       this.cog,
       this.options,
-      this.style === 'antd'
+      this.style === 'default'
         ? {
-            spellChecker: false,
+            spellChecker: true,
             autoDownloadFontAwesome: false,
           }
         : {},
     );
     config.element = this.con.nativeElement;
     this.zone.runOutsideAngular(() => {
-      this.instance = new easymde(config);
+      this.instance = new EasyMDE(config);
       if (this.value) {
         this.instance.value(this.value);
       }

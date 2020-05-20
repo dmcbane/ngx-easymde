@@ -28,7 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/ng-zorro-antd/src/ng-zorro-antd.css",
+              "node_modules/easymde/dist/easymde.min.css",
               "src/styles.less"
             ],
             "scripts": [
@@ -85,7 +85,7 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "scripts": [
-              "node_modules/easymde-antd/dist/easymde.min.js"
+              "node_modules/easymde/dist/easymde.min.js"
             ],
             "styles": [],
             "assets": []
