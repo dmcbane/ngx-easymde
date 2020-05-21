@@ -5,6 +5,7 @@
   "author": "H. Dale McBane <h.dale.mcbane@gmail.com>",
   "license": "MIT",
   "homepage": "https://dmcbane.github.io/ngx-easymde/",
+  "repository": {"url": "https://github.com/dmcbane/ngx-easymde.git"},
   "bugs": {
     "url": "https://github.com/dmcbane/ngx-easymde/issues"
   },
