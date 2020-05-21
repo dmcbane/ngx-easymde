@@ -1,0 +1,47 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Ng Analyze",
+            "type": "shell",
+            "command": "ng build --prod --build-optimizer --stats-json"
+        },
+        {
+            "label": "Ng Build",
+            "type": "shell",
+            "command": "ng build"
+        },
+        {
+            "label": "Ng Site Build",
+            "type": "shell",
+            "command": "ng build --prod --build-optimizer"
+        },
+        {
+            "label": "Ng Site:gh Build",
+            "type": "shell",
+            "command": "ng build --prod --build-optimizer --base-href /ngx-easymde/ && gh-pages -d ./dist"
+        },
+        {
+            "label": "Ng Serve",
+            "type": "shell",
+            "command": "ng serve"
+        },
+        {
+            "label": "Ng Test",
+            "type": "shell",
+            "command": "ng test --code-coverage --watch=false"
+        },
+        {
+            "label": "Npm Release",
+            "type": "shell",
+            "command": "npm run build && cd publish && npm publish --access public"
+        },
+        {
+            "label": "Npm Release Next",
+            "type": "shell",
+            "command": "npm run build && cd publish && npm publish --access public --tag next",
+        },
+    ]
+}
