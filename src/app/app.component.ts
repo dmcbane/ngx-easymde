@@ -34,6 +34,9 @@ You can also choose to hide the statusbar and/or toolbar for a simple and clean 
     http
       .get('./assets/autoSaving.md', { responseType: 'text' })
       .subscribe(res => (this.autoSaving = res));
+    http
+      .get('./assets/customize.md', { responseType: 'text' })
+      .subscribe(res => (this.customize = res));
 
     this.f = fb.group({
       text: ['', Validators.required],
