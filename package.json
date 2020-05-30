@@ -1,11 +1,13 @@
 {
   "name": "ngx-easymde",
-  "version": "9.0.0",
+  "version": "0.1.0",
   "description": "Angular for easymde",
   "author": "H. Dale McBane <h.dale.mcbane@gmail.com>",
   "license": "MIT",
   "homepage": "https://dmcbane.github.io/ngx-easymde/",
-  "repository": {"url": "https://github.com/dmcbane/ngx-easymde.git"},
+  "repository": {
+    "url": "https://github.com/dmcbane/ngx-easymde.git"
+  },
   "bugs": {
     "url": "https://github.com/dmcbane/ngx-easymde/issues"
   },
@@ -42,18 +44,18 @@
     "ngx-smart-modal": "^7.4.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.901.6",
-    "@angular/animations": "~9.1.7",
-    "@angular/cli": "~9.1.6",
-    "@angular/common": "~9.1.7",
-    "@angular/compiler": "~9.1.7",
-    "@angular/compiler-cli": "~9.1.7",
-    "@angular/core": "~9.1.7",
-    "@angular/forms": "~9.1.7",
-    "@angular/language-service": "~9.1.7",
-    "@angular/platform-browser": "~9.1.7",
-    "@angular/platform-browser-dynamic": "~9.1.7",
-    "@angular/router": "~9.1.7",
+    "@angular-devkit/build-angular": "~0.901.7",
+    "@angular/animations": "~9.1.9",
+    "@angular/cli": "~9.1.7",
+    "@angular/common": "~9.1.9",
+    "@angular/compiler": "~9.1.9",
+    "@angular/compiler-cli": "~9.1.9",
+    "@angular/core": "~9.1.9",
+    "@angular/forms": "~9.1.9",
+    "@angular/language-service": "~9.1.9",
+    "@angular/platform-browser": "~9.1.9",
+    "@angular/platform-browser-dynamic": "~9.1.9",
+    "@angular/router": "~9.1.9",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",

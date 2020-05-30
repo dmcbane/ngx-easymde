@@ -1,29 +1,130 @@
-<h1>
-  ngx-easymde
-</h1>
-<p class="mt-3 mb-3">Angular for EasyMDE</p>
-<h1>Demo</h1>
-<button class="btn btn-primary" (click)="ngxSmartModalService.getModal('exampleModal').open()">Open in modal</button>
-<easymde #easymde [(ngModel)]="demo"></easymde>
-<h1>Customize toolbar</h1>
-<easymde
-  [(ngModel)]="customize"
-  [options]="{ toolbar: ['bold', 'italic', 'heading', '|', 'quote'] }"
-></easymde>
-<h1>Autosaving</h1>
-<easymde [(ngModel)]="autoSaving" [options]="autoSavingOptions"></easymde>
-<h1>Hidden toolbar and status bar</h1>
-<easymde
-  [(ngModel)]="hiddenToolbar"
-  [options]="{ toolbar: false, status: false }"
-></easymde>
+<h1>ngx-easymde</h1>
+
+<p class="mt-3 mb-3">Angular for <a href="https://easymde.tk/">Easy MarkDown Editor</a></p>
+
+<h2>Show Modal</h2>
+
+<p>Display the editor in a modal dialog.</p>
+
+<button class="btn btn-primary" (click)="ngxSmartModalService.getModal('exampleModal').open()">Display Dialog</button>
 <ngx-smart-modal #exampleModal identifier="exampleModal">
-  <easymde [(ngModel)]="demo"></easymde>
+  <easymde [(ngModel)]="modal"></easymde>
   <button (click)="exampleModal.close()">Close</button>
 </ngx-smart-modal>
-<h1>Reactive forms</h1>
-<form [formGroup]="f" (ngSubmit)="onSubmit()">
-  <easymde formControlName="text"></easymde>
-  <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Send</button>
-  <button class="btn" (click)="setDisabledForForm()">Set Disabled</button>
+
+<p>With:</p>
+<div class='example'><pre><code class="language-html">
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"btn btn-primary"</span> (click)=<span class="hljs-string">"ngxSmartModalService.getModal('exampleModal').open()"</span>&gt;</span>Display Dialog<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ngx-smart-modal</span> #<span class="hljs-attr">exampleModal</span> <span class="hljs-attr">identifier</span>=<span class="hljs-string">"exampleModal"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">easymde</span> [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">"modal"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">easymde</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">"exampleModal.close()"</span>&gt;</span>Close<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ngx-smart-modal</span>&gt;</span></span>
+</code></pre></div>
+
+<h2>Default Settings</h2>
+
+<p>The editor with default settings.</p>
+
+<easymde [(ngModel)]="demo"></easymde>
+
+<p>With:</p>
+<div class='example'><pre><code class="language-html">
+<span class="hljs-tag">&lt;<span class="hljs-name">easymde</span> [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">"demo"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">easymde</span>&gt;</span>
+</code></pre></div>
+
+<h2>Customized Toolbar</h2>
+
+<p>Limiting the toolbar to only Bold, Italic, Heading, Quote, and Preview.</p>
+<easymde [(ngModel)]="customize" [options]="{ toolbar: ['bold', 'italic', 'heading', '|', 'quote', '|', 'preview'] }">
+</easymde>
+
+<p>With:</p>
+<div class='example'><pre><code class="language-html">
+<span class="hljs-tag">&lt;<span class="hljs-name">easymde</span>
+  [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">"customize"</span>
+  [<span class="hljs-attr">options</span>]=<span class="hljs-string">"{{ '{' }} toolbar: ['bold', 'italic', 'heading', '|', 'quote', '|', 'preview'] {{ '}' }}"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">easymde</span>&gt;</span>
+</code></pre></div>
+
+<h2>Autosaving</h2>
+
+<p>The editor can automatically save its contents to prevent changes when you reload the page.</p>
+<easymde id="ndx-easymde-autosave-demo" #easymde [(ngModel)]="autoSaving" [options]="autoSavingOptions"></easymde>
+
+<p>With:</p>
+<div class='example'><pre><code class="language-html">
+<span class="hljs-tag">&lt;<span class="hljs-name">easymde</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"ndx-easymde-autosave-demo"</span> #<span class="hljs-attr">easymde</span> [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">"autoSaving"</span> [<span class="hljs-attr">options</span>]=<span class="hljs-string">"autoSavingOptions"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">easymde</span>&gt;</span>
+</code></pre></div>
+
+<p>where autoSavingsOptions is defined as</p>
+
+<div class='example'><pre><code class="language-typescript">
+<span class="hljs-string">autoSavingOptions</span> <span class="hljs-string">=</span> <span class="hljs-string">{{ '{' }}</span>
+  <span class="hljs-attr">autosave:</span> <span class="hljs-string">{{ '{' }}</span> <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span><span class="hljs-string">,</span> <span class="hljs-attr">delay:</span> <span class="hljs-number">1000</span><span class="hljs-string">,</span> <span class="hljs-attr">uniqueId:</span> <span class="hljs-string">'ndx-easymde-autosave-demo'</span> <span class="hljs-string">},</span>
+  <span class="hljs-attr">renderingConfig:</span> <span class="hljs-string">{{ '{' }}</span>
+    <span class="hljs-attr">codeSyntaxHighlighting:</span> <span class="hljs-literal">true</span><span class="hljs-string">,</span>
+  <span class="hljs-string">},</span>
+<span class="hljs-string">};</span>
+</code></pre></div>
+
+<h2>Hidden toolbar and status bar</h2>
+
+<easymde [(ngModel)]="hiddenToolbar"
+  [options]="{ toolbar: false, status: false, renderingConfig: { codeSyntaxHighlighting: true } }"></easymde>
+
+<p>With:</p>
+<div class='example'><pre><code class="language-html">
+<span class="hljs-tag">&lt;<span class="hljs-name">easymde</span> <span class="hljs-string">[(ngModel)]="hiddenToolbar"</span>
+  <span class="hljs-string">[options]="{{ '{' }}</span> <span class="hljs-attr">toolbar:</span> <span class="hljs-literal">false</span><span class="hljs-string">,</span> <span class="hljs-attr">status:</span> <span class="hljs-literal">false</span><span class="hljs-string">,</span> <span class="hljs-attr">renderingConfig:</span> <span class="hljs-string">{{ '{' }}</span> <span class="hljs-attr">codeSyntaxHighlighting:</span> <span class="hljs-literal">true</span> <span class="hljs-string">}</span> <span class="hljs-string">}"</span>&gt;&lt;/easymde&gt;</span>
+</code></pre></div>
+
+<h2>Event Handling</h2>
+
+<p>How to setup event handlers</p>
+
+<easymde [(ngModel)]="eventcontent" (onChange)="onChange($event)" (onBlur)="onBlur($event)"></easymde>
+
+<p>With:</p>
+<div class='example'><pre><code class="language-html">
+<span class="hljs-tag">&lt;<span class="hljs-name">easymde</span> [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">"eventcontent"</span> (<span class="hljs-attr">onChange</span>)=<span class="hljs-string">"onChange($event)"</span> (<span class="hljs-attr">onBlur</span>)=<span class="hljs-string">"onBlur($event)"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">easymde</span>&gt;</span>
+</code></pre></div>
+
+<p>and the handlers...</p>
+
+<div class='example'><pre><code class="language-typescript">
+  <span class="hljs-selector-tag">onBlur</span>(<span class="hljs-attribute">message</span>: string)<span class="hljs-selector-pseudo">:void</span> {{ '{' }}
+    <span class="hljs-selector-tag">alert</span>(message);
+  }
+
+  <span class="hljs-selector-tag">onChange</span>(<span class="hljs-attribute">message</span>: string)<span class="hljs-selector-pseudo">:void</span> {{ '{' }}
+    <span class="hljs-selector-tag">console</span><span class="hljs-selector-class">.log</span>(message);
+  }
+</code></pre></div>
+
+<h2>Reactive forms</h2>
+
+You're not limitied to template driven forms; the component also works with reactive forms.
+
+<form [formGroup]="fg" (ngSubmit)="onSubmit()">
+  <easymde formControlName="text"
+    [options]="{ hideIcons: ['side-by-side'], renderingConfig: { codeSyntaxHighlighting: true } }"></easymde>
+  <button class="btn btn-primary" type="submit" [disabled]="fg.invalid">Submit</button>
+  <button class="btn" (click)="setDisabledForForm()">{{this.buttonText}}</button>
 </form>
+
+<p>With:</p>
+<div class='example'><pre><code class="language-html">
+<span class="hljs-tag">&lt;<span class="hljs-name">form</span> [<span class="hljs-attr">formGroup</span>]=<span class="hljs-string">"fg"</span> (<span class="hljs-attr">ngSubmit</span>)=<span class="hljs-string">"onSubmit()"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">easymde</span> <span class="hljs-attr">formControlName</span>=<span class="hljs-string">"text"</span>
+    [<span class="hljs-attr">options</span>]=<span class="hljs-string">"{{ '{' }} hideIcons: ['side-by-side'], renderingConfig: {{ '{' }} codeSyntaxHighlighting: true } }"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">easymde</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-primary"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> [<span class="hljs-attr">disabled</span>]=<span class="hljs-string">"fg.invalid"</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn"</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">"setDisabledForForm()"</span>&gt;</span>{{ '{{' }}this.buttonText}}<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
+</code></pre></div>
+
+<p>and</p>
+
+<div class='example'><pre><code><span class="hljs-keyword">this</span>.fg = fb.<span class="hljs-keyword">group</span>({{ '{' }}
+   text: [<span class="hljs-string">'# It works here too...'</span>],
+});</code></pre></div>

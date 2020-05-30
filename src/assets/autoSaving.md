@@ -1,11 +1,16 @@
 
 # Headers
-2123123123
+
 # H1
+
 ## H2
+
 ### H3
+
 #### H4
+
 ##### H5
+
 ###### H6
 
 Alternatively, for H1 and H2, an underline-ish style:
@@ -15,8 +20,6 @@ Alt-H1
 
 Alt-H2
 ------
-
-
 
 # Emphasis
 
@@ -31,10 +34,15 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 # Lists
 
 1. First ordered list item
+
 2. Another item
-  * Unordered sub-list.
+
+   * Unordered sub-list.
+
 1. Actual numbers don't matter, just that it's a number
-  1. Ordered sub-list
+
+   1. Ordered sub-list
+
 4. And another item.
 
 ⋅⋅⋅You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
@@ -44,9 +52,10 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 ⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
 
 * Unordered list can use asterisks
-- Or minuses
-+ Or pluses
 
+- Or minuses
+
++ Or pluses
 
 # Links
 
@@ -74,8 +83,6 @@ Some text to show that the reference links can follow later.
 [1]: http://slashdot.org
 [link text itself]: http://www.reddit.com
 
-
-
 # Images
 
 Here's our logo (hover to see the title text):
@@ -90,39 +97,44 @@ Reference-style:
 
 # Code and Syntax Highlighting
 
-Inline `code` has `back-ticks around` it.
+Inline `code` has `back-ticks around` it.  Code blocks are surrounded by triple back-ticks followed by the language (i.e. \`\`\`typescript). It supports all languages provided by [highlight.js](https://highlightjs.org)
 
-```ts
-import { EasymdeModule } from 'ngx-easymde';
+* typescript
 
-@NgModule({
-  imports: [
-    BrowserModule,
-    EasymdeModule.forRoot({
-    })
-  ],
-  declarations: [AppComponent],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-```
+  ```ts
+  import { EasymdeModule } from 'ngx-easymde';
 
-```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
-```
+  @NgModule({
+    imports: [
+      BrowserModule,
+      EasymdeModule.forRoot({
+      })
+    ],
+    declarations: [AppComponent],
+    bootstrap: [AppComponent]
+  })
+  export class AppModule { }
+  ```
 
-```python
-s = "Python syntax highlighting"
-print s
-```
+* javascript
 
-```
-No language indicated, so no syntax highlighting.
-But let's throw in a <b>tag</b>.
+  ```javascript
+  var s = "JavaScript syntax highlighting";
+  alert(s);
+  ```
 
-```
+* python
 
+  ```python
+  s = "Python syntax highlighting"
+  print s
+  ```
+
+* When no language is indicated...
+
+  ```
+  <a href="https://highlightjs.org"><b>highlight.js</b></a> guesses...
+  ```
 
 # Blockquotes
 
@@ -132,7 +144,6 @@ But let's throw in a <b>tag</b>.
 Quote break.
 
 > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
-
 
 # Horizontal Rule
 
@@ -166,7 +177,5 @@ raw Markdown line up prettily. You can also use inline Markdown.
 
 Markdown | Less | Pretty
 --- | --- | ---
-*Still* | `renders]` | **nicely**
+*Still* | `[renders]` | **nicely**
 1 | 2 | 3
-123123123
-**[](http://)**
