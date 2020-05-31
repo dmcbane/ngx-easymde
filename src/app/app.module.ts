@@ -9,6 +9,7 @@ import { EasymdeModule } from 'ngx-easymde';
 
 import { AppComponent } from './app.component';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { NgxSmartModalModule } from 'ngx-smart-modal';
     BrowserAnimationsModule,
     EasymdeModule.forRoot({}),
     NgxSmartModalModule.forRoot(),
+    MarkdownModule.forRoot(),
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],

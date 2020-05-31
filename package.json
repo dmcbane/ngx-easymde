@@ -37,6 +37,7 @@
   "dependencies": {
     "easymde": "^2.10.1",
     "ngx-highlightjs": "^4.0.2",
+    "ngx-markdown": "^9.1.1",
     "ngx-smart-modal": "^7.4.0"
   },
   "peerDependencies": {
@@ -59,6 +60,7 @@
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
+    "angular-cli-ghpages": "^0.6.2",
     "codecov": "^3.6.5",
     "codelyzer": "^5.1.2",
     "jasmine-core": "~3.5.0",
