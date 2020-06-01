@@ -25,12 +25,12 @@
   ],
   "scripts": {
     "analyze": "ng build --prod --build-optimizer --stats-json",
-    "build": "ng build",
+    "build": "node scripts/build.js",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "release": "npm run build && cd publish && npm publish --access public",
     "release:next": "npm run build && cd publish && npm publish --access public --tag next",
     "site:build": "ng build --prod --build-optimizer",
-    "site:gh": "ng deploy",
+    "site:gh": "ng build --prod --build-optimizer --base-href /gnx-easymde/ && ng deploy",
     "start": "ng serve",
     "test": "ng test --code-coverage --watch=false"
   },
@@ -97,7 +97,8 @@
     "whitelistedNonPeerDependencies": [
       "easymde",
       "ngx-highlightjs",
-      "ngx-smart-modal"
+      "ngx-smart-modal",
+      "ngx-markdown"
     ],
     "dest": "./publish"
   }
