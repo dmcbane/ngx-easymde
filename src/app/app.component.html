@@ -1,15 +1,15 @@
 <h1>ngx-easymde</h1>
 
-<p class="mt-3 mb-3">An Angular wrapper for <a href="https://easymde.tk/">Easy MarkDown Editor</a></p>
+<p>An Angular wrapper for the <a href="https://easymde.tk/">Easy MarkDown Editor</a> originally derived from <a href="https://cipchk.github.io/ngx-simplemde/">Angular for simplemde(Markdown Editor) by 卡色 cipchk</a>.</p>
 
-<h2>Default Settings</h2>
+<h2>With Default Settings</h2>
 
 <p>The editor with default settings.</p>
 
 <easymde [(ngModel)]="demo"></easymde>
 <markdown [data]="demoCode"></markdown>
 
-<h2>Via Modal Dialog</h2>
+<h2>Within a Modal Dialog</h2>
 
 <p>Display the editor in a modal dialog.</p>
 
@@ -21,16 +21,16 @@
 
 <markdown [data]="modalCode"></markdown>
 
-<h2>Customized Toolbar</h2>
+<h2>With a Customized Toolbar</h2>
 
-<p>Limiting the toolbar to only Bold, Italic, Heading, Quote, and Preview.</p>
+<p>Toolbar with only Bold, Italic, Heading toggle, Blockquote, and Preview buttons.</p>
 <easymde
   [(ngModel)]="customize"
   [options]="{ toolbar: ['bold', 'italic', 'heading', '|', 'quote', '|', 'preview'] }">
 </easymde>
 <markdown [data]="customizeCode"></markdown>
 
-<h2>Autosaving</h2>
+<h2>With Autosaving</h2>
 
 <p>The editor can automatically save its contents to prevent changes when you reload the page.</p>
 <easymde
@@ -41,7 +41,7 @@
 </easymde>
 <markdown [data]="autoSavingCode"></markdown>
 
-<h2>Hidden Toolbar and Status Bar</h2>
+<h2>With Hidden Toolbar and Status Bar</h2>
 
 <easymde
   [(ngModel)]="hiddenToolbar"
@@ -49,9 +49,7 @@
 </easymde>
 <markdown [data]="hiddenToolbarCode"></markdown>
 
-<h2>Event Handling</h2>
-
-<p>How to setup event handlers</p>
+<h2>With Event Handling</h2>
 
 <easymde
   [(ngModel)]="eventContent"
@@ -60,7 +58,7 @@
 </easymde>
 <markdown [data]="eventContentCode"></markdown>
 
-<h2>Reactive Forms</h2>
+<h2>Within Reactive Forms</h2>
 
 You're not limitied to template driven forms; the component also works with reactive forms.
 

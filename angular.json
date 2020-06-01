@@ -29,7 +29,9 @@
             ],
             "styles": [
               "node_modules/easymde/dist/easymde.min.css",
+              "node_modules/codemirror/theme/xq-light.css",
               "node_modules/prismjs/themes/prism-solarizedlight.css",
+              "node_modules/ngx-smart-modal/ngx-smart-modal.css",
               "src/styles.less"
             ],
             "scripts": [

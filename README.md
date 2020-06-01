@@ -1,6 +1,6 @@
 # ngx-easymde
 
-Angular wrapper for the [EasyMDE](https://easymde.tk/) markdown editor.  Originally derived from [Angular for simplemde(Markdown Editor)](https://cipchk.github.io/ngx-simplemde/)
+An Angular wrapper for the [Easy MarkDown Editor](https://easymde.tk/) originally derived from [Angular for simplemde(Markdown Editor) by 卡色 cipchk](https://cipchk.github.io/ngx-simplemde/).
 
 [![NPM version](https://img.shields.io/npm/v/ngx-easymde.svg)](https://www.npmjs.com/package/ngx-easymde)
 [![Build Status](https://travis-ci.org/dmcbane/ngx-easymde.svg?branch=master)](https://travis-ci.org/dmcbane/ngx-easymde)
@@ -15,21 +15,18 @@ Angular wrapper for the [EasyMDE](https://easymde.tk/) markdown editor.  Origina
 1. Install `ngx-easymde` from `npm`
 
    ```bash
-   yarn add ngx-easymde --save
+   npm add ngx-easymde --save
    ```
 
-1. Import the `EasymdeModule` in to your root `AppModule`.
+1. Import the `EasymdeModule` into your root `AppModule` (`app.module.ts`).
 
-   ```ts
+   ```typescript
    import { EasymdeModule } from 'ngx-easymde';
 
    @NgModule({
      imports: [
        BrowserModule,
-       EasymdeModule.forRoot({
-         // Global options
-         autosave: { enabled: true, uniqueId: '<DOM Element ID>' }
-       })
+       EasymdeModule.forRoot()
      ],
      declarations: [AppComponent],
      bootstrap: [AppComponent]
@@ -37,10 +34,21 @@ Angular wrapper for the [EasyMDE](https://easymde.tk/) markdown editor.  Origina
    export class AppModule { }
    ```
 
+   To set global options, pass them to the `forRoot` function.
+
+   ```typescript
+       EasymdeModule.forRoot({
+         autosave: { enabled: true, delay: 10000 },
+         hideIcons: ['side-by-side'],
+         renderingConfig: { codeSyntaxHighlighting: true }
+       })
+   ```
+
 1. Add `easymde.min.js` and styles to `angular.json`.
 
    ```json
    "styles": [
+     "node_modules/easymde/dist/easymde.min.css",
      "src/styles.less"
    ],
    "scripts": [

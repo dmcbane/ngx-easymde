@@ -120,7 +120,7 @@ Typescript snippet:
 
 \`\`\`typescript
     this.fg = fb.group({
-      text: ['# It works here too...'],
+      text: ['# Also from a reactive form...'],
     });
 \`\`\`
   `;
@@ -150,7 +150,7 @@ Typescript snippet:
       .subscribe(res => (this.customize = res));
 
     this.fg = fb.group({
-      text: ['# It works here too...'],
+      text: ['# Also from a reactive form...'],
     });
   }
 
