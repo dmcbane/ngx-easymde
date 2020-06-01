@@ -21,7 +21,7 @@ before_install:
 env:
   - TASK=test
   - TASK=lint
-  - TASK=build
+  # - TASK=build
   - TASK=site:build
 
 script:
