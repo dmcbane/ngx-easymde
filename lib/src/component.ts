@@ -12,7 +12,7 @@ import {
   ViewChild,
   SimpleChange,
   Output,
-  EventEmitter
+  EventEmitter,
 } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
@@ -22,9 +22,7 @@ declare const EasyMDE: any;
 
 @Component({
   selector: 'easymde',
-  template: `
-    <textarea #easyMarkDownEditor></textarea>
-  `,
+  template: ` <textarea #easyMarkDownEditor></textarea> `,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -34,8 +32,7 @@ declare const EasyMDE: any;
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class EasymdeComponent
-  implements AfterViewInit, OnChanges, OnDestroy, ControlValueAccessor {
+export class EasymdeComponent implements AfterViewInit, OnChanges, OnDestroy, ControlValueAccessor {
   @ViewChild('easyMarkDownEditor') private con: ElementRef;
   private instance: any;
   private value: string;
@@ -58,7 +55,7 @@ export class EasymdeComponent
    * of Codemirror.
    */
   setOptions(option: string, value: any): void {
-    if (!this.instance) return ;
+    if (!this.instance) return;
     this.instance.codemirror.setOption(option, value);
   }
 
@@ -72,7 +69,7 @@ export class EasymdeComponent
     if (this.instance) {
       this.instance.codemirror.on('change', fn);
     } else {
-      setTimeout(() => this.instance.codemirror.on('change', fn), 1000)
+      setTimeout(() => this.instance.codemirror.on('change', fn), 1000);
     }
   }
 
@@ -80,7 +77,7 @@ export class EasymdeComponent
     if (this.instance) {
       this.instance.codemirror.on('blur', fn);
     } else {
-      setTimeout(() => this.instance.codemirror.on('blur', fn), 1000)
+      setTimeout(() => this.instance.codemirror.on('blur', fn), 1000);
     }
   }
 
@@ -117,13 +114,13 @@ export class EasymdeComponent
       this.instance.codemirror.on('blur', () => {
         this.value = this.instance.value();
         this.zone.run(() => {
-          this.onBlur.emit(this.value)
+          this.onBlur.emit(this.value);
         });
       });
       this.instance.codemirror.on('change', () => {
         this.value = this.instance.value();
         this.zone.run(() => {
-          this.onChange.emit(this.value)
+          this.onChange.emit(this.value);
         });
       });
       this.setDisable();
@@ -139,9 +136,7 @@ export class EasymdeComponent
 
   private setDisable() {
     if (this.instance) {
-      this.zone.runOutsideAngular(
-        () => (this.instance.codemirror.options.readOnly = this.disabled),
-      );
+      this.zone.runOutsideAngular(() => (this.instance.codemirror.options.readOnly = this.disabled));
     }
   }
 
@@ -149,9 +144,7 @@ export class EasymdeComponent
     this.initDelay();
   }
 
-  ngOnChanges(
-    changes: { [P in keyof this]?: SimpleChange } & SimpleChanges,
-  ): void {
+  ngOnChanges(changes: { [P in keyof this]?: SimpleChange } & SimpleChanges): void {
     if (changes.options && !changes.options.firstChange) this.initDelay();
   }
 

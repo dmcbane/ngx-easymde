@@ -17,13 +17,13 @@ Template snippet:
 \`\`\`html
 <easymde [(ngModel)]="demo"></easymde>
 \`\`\`
-`
+`;
   modal = `# This is the editor in a modal
 Close the dialog by:
 
 * Pressing the "Escape" key
 * Clicking the "Close" button
-* Clicking outside of the dialog`
+* Clicking outside of the dialog`;
   modalCode = `
 Template snippet:
 
@@ -139,15 +139,9 @@ Typescript snippet:
   isVisible = false;
 
   constructor(http: HttpClient, fb: FormBuilder, public ngxSmartModalService: NgxSmartModalService) {
-    http
-      .get('./assets/demo.md', { responseType: 'text' })
-      .subscribe(res => (this.demo = res));
-    http
-      .get('./assets/autoSaving.md', { responseType: 'text' })
-      .subscribe(res => (this.autoSaving = res));
-    http
-      .get('./assets/customize.md', { responseType: 'text' })
-      .subscribe(res => (this.customize = res));
+    http.get('./assets/demo.md', { responseType: 'text' }).subscribe((res) => (this.demo = res));
+    http.get('./assets/autoSaving.md', { responseType: 'text' }).subscribe((res) => (this.autoSaving = res));
+    http.get('./assets/customize.md', { responseType: 'text' }).subscribe((res) => (this.customize = res));
 
     this.fg = fb.group({
       text: ['# Also from a reactive form...'],
@@ -158,11 +152,11 @@ Typescript snippet:
     this.easymde.setOptions('lineNumbers', true);
   }
 
-  onBlur(message: string):void {
+  onBlur(message: string): void {
     alert(message);
   }
 
-  onChange(message: string):void {
+  onChange(message: string): void {
     console.log(message);
   }
 

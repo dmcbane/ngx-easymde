@@ -47,7 +47,7 @@ describe('Component: ngx-easymde', () => {
     getEl(cls: string) {
       return fixture.debugElement.query(By.css(cls));
     }
-    checkCount(cls: string = '.CodeMirror', num: number = 1): this {
+    checkCount(cls = '.CodeMirror', num = 1): this {
       expect(document.querySelectorAll(cls).length).toBe(num);
       return this;
     }
@@ -55,12 +55,13 @@ describe('Component: ngx-easymde', () => {
 });
 
 @Component({
-  template:
-    '<easymde #comp [(ngModel)]="value" (ngModelChange)="change($event)" [options]="options"></easymde>',
+  template: '<easymde #comp [(ngModel)]="value" (ngModelChange)="change($event)" [options]="options"></easymde>',
 })
 class TestNGComponent {
   @ViewChild('comp') comp: EasymdeComponent;
   value: string;
   options: any;
-  change(str: string) {}
+  change(str: string) {
+    console.log(str);
+  }
 }
