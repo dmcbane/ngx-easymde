@@ -1,0 +1,6 @@
+{
+  "default": true,
+  "heading-style": { "style": "atx" },
+  "ul-style": { "style": "sublist" },
+  "no-trailing-spaces": { "br_spaces": 2 }
+}
