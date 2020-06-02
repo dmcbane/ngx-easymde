@@ -1,6 +1,6 @@
 {
   "name": "ngx-easymde",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "description": "Angular for easymde",
   "author": "H. Dale McBane <h.dale.mcbane@gmail.com>",
   "license": "MIT",
@@ -35,13 +35,11 @@
     "test": "ng test --code-coverage --watch=false"
   },
   "dependencies": {
-    "easymde": "^2.10.1",
-    "ngx-highlightjs": "^4.0.2",
-    "ngx-markdown": "^9.1.1",
-    "ngx-smart-modal": "^7.4.0"
+    "easymde": "^2.10.1"
   },
   "peerDependencies": {
     "ngx-highlightjs": "^4.0.2",
+    "ngx-markdown": "^9.1.1",
     "ngx-smart-modal": "^7.4.0"
   },
   "devDependencies": {
@@ -95,10 +93,7 @@
       "entryFile": "lib/index.ts"
     },
     "whitelistedNonPeerDependencies": [
-      "easymde",
-      "ngx-highlightjs",
-      "ngx-smart-modal",
-      "ngx-markdown"
+      "easymde"
     ],
     "dest": "./publish"
   }
