@@ -10,7 +10,7 @@ import { EasymdeConfig } from './config';
   exports: [EasymdeComponent],
 })
 export class EasymdeModule {
-  static forRoot(config?: EasymdeConfig): ModuleWithProviders {
+  static forRoot(config?: EasymdeConfig): ModuleWithProviders<EasymdeModule> {
     return {
       ngModule: EasymdeModule,
       providers: [{ provide: EasymdeConfig, useValue: config }],
