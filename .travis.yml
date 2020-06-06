@@ -19,8 +19,8 @@ before_install:
   - sh -e /etc/init.d/xvfb start
 
 env:
-  - TASK=test
   - TASK=lint
+  - TASK=test
   - TASK=build
   - TASK=site:build
 
