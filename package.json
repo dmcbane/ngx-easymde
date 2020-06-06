@@ -1,6 +1,6 @@
 {
   "name": "ngx-easymde",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Angular for easymde",
   "author": "H. Dale McBane <h.dale.mcbane@gmail.com>",
   "license": "MIT",
@@ -39,7 +39,7 @@
     "easymde": "^2.10.1"
   },
   "optionalDependencies": {
-    "ngx-highlightjs": "^4.1.0-beta",
+    "ngx-highlightjs": "^4.0.2",
     "ngx-markdown": "^9.1.1",
     "ngx-smart-modal": "^7.4.0"
   },
