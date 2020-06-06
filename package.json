@@ -32,13 +32,14 @@
     "site:build": "ng build --prod --build-optimizer",
     "site:gh": "ng build --prod --build-optimizer --base-href /gnx-easymde/ && ng deploy",
     "start": "ng serve",
-    "test": "ng test --code-coverage --watch=false"
+    "test": "ng test --watch=false",
+    "test:coverage": "ng test --code-coverage --watch=false"
   },
   "dependencies": {
     "easymde": "^2.10.1"
   },
   "peerDependencies": {
-    "ngx-highlightjs": "^4.0.2",
+    "ngx-highlightjs": "^4.1.0-beta",
     "ngx-markdown": "^9.1.1",
     "ngx-smart-modal": "^7.4.0"
   },

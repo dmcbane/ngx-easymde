@@ -94,11 +94,11 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "styles": [
-              "node_modules/easymde/dist/easymde.min.css",
               "src/styles.less"
             ],
             "scripts": [
-              "node_modules/easymde/dist/easymde.min.js"
+              "node_modules/easymde/dist/easymde.min.js",
+              "node_modules/marked/lib/marked.js"
             ],
             "assets": []
           }
