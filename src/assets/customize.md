@@ -1,10 +1,16 @@
+# Markdown
+
 ## Overview
 
-Nearly all Markdown applications support the basic syntax outlined in John Gruber’s original design document. There are minor variations and discrepancies between Markdown processors — those are noted inline wherever possible.
+The following is derived from the [Markdown Guide &ndash; Basic Syntax](https://www.markdownguide.org/basic-syntax/) page from the [Markdown Guide](https://www.markdownguide.org). Thank you John for the original work and thank you Matt for such an excellent guide.
+
+John Gruber's original [Markdown design](https://daringfireball.net/projects/markdown/) is supported by almost all markdown processors. [Commonmark](https://commonmark.org/) and [Github Flavored Markdown](https://guides.github.com/features/mastering-markdown/#GitHub-flavored-markdown) are two commonly used variants. Minor variations and discrepancies between Markdown processors are noted inline wherever possible.
 
 ## Headings
 
-To create a heading, add number signs (`#`) in front of a word or phrase. The number of number signs you use should correspond to the heading level. For example, to create a heading level three (``), use three number signs (e.g., `### My Header`).
+### ATX Style
+
+To create a heading, add number signs (`#`) in front of a word or phrase. The number of number signs corresponds to the heading level. For example, to create a heading level three (`<h3>`), use three number signs (e.g., `### My Header`).
 
 | Markdown | HTML | Rendered Output |
 | --- | --- | --- |
@@ -15,12 +21,13 @@ To create a heading, add number signs (`#`) in front of a word or phrase. The nu
 | `##### Heading level 5` | `<h5>Heading level 5</h5>` | <h5>Heading level 5</h5> |
 | `###### Heading level 6` | `<h6>Heading level 6</h6>` | <h6>Heading level 6</h6> |
 
-### Alternate Syntax
+### Underlining Style
 
-Alternatively, on the line below the text, add any number of `==` characters for heading level 1 or `--` characters for heading level 2.
+Alternatively, on the line below the text, add any number of `==` characters for
+heading level 1 or `--` characters for heading level 2.
 
-| Markdown                         | HTML              | Rendered Output |
-| -------------------------------- | ----------------- | --------------- |
+| Markdown | HTML | Rendered Output |
+| --- | --- | --- |
 | <pre>Heading level 1<br>===============</pre>| `<h1>Heading level 1</h1>` | <h1>Heading level 1</h1> |
 | <pre>Heading level 2<br>---------------</pre> | `<h2>Heading level 2</h2>` | <h2>Heading level 2</h2> |
 
@@ -28,32 +35,32 @@ Alternatively, on the line below the text, add any number of `==` characters for
 
 Markdown applications don’t agree on how to handle missing blank lines between a heading and the surrounding paragraphs. For compatibility, separate paragraphs and headings with one or more blank lines.
 
-| ✅ Do this                                                    | ❌ Don't do this                                              |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ✅ Do this | ❌ Don't do this |
+| --- | --- |
 | <pre>This is a paragraph.<br><br># Here's the heading<br><br>And this is another paragraph.</pre> | <pre>This is a paragraph.<br># Here's the heading<br>And this is another paragraph.</pre> |
 
 ## Paragraphs
 
 To create paragraphs, use a blank line to separate one or more lines of text.
 
-| Markdown                                                     | HTML                                                         | Rendered Output                                              |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Markdown | HTML | Rendered Output |
+| --- | --- | --- |
 | <pre>I really like using Markdown.<br><br>I think I'll use it to format all of my documents from now on.</pre> | <p>&lt;p&gt;I really like using Markdown.&lt;/p&gt;</p><p>&lt;p&gt;I think I'll use it to format all of my documents from now on.&lt;/p&gt;</p> | <p>I really like using Markdown.</p><p>I think I'll use it to format all of my documents from now on.</p> |
 
 ### Paragraph Best Practices
 
 Don’t indent paragraphs with spaces or tabs.
 
-| ✅ Do this                                                    | ❌ Don't do this                                              |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ✅ Do this | ❌ Don't do this |
+| --- | --- |
 | <pre>Don't put tabs or spaces in front of your paragraphs.<br><br>Keep lines left-aligned like this.</pre> | <pre>  This can result in unexpected formatting problems.<br><br> Don't add tabs or spaces in front of paragraphs.</pre> |
 
 ## Line Breaks
 
 To create a line break (` `), end a line with two or more spaces, and then type return.
 
-| Markdown                                                | HTML                                                   | Rendered Output                                      |
-| ------------------------------------------------------- | ------------------------------------------------------ | ---------------------------------------------------- |
+| Markdown | HTML | Rendered Output |
+| --- | --- | --- |
 | <pre>This is the first line.  <br>And this is the second line.</pre> | <pre>&lt;p&gt;This is the first line.&lt;br&gt;<br>And this is the second line.&lt;/p&gt;</pre> | <p>This is the first line.<br>And this is the second line.</p> |
 
 ### Line Break Best Practices
@@ -64,8 +71,8 @@ For compatibility, use trailing white space or the ` ` HTML tag at the end of th
 
 There are two other options I don’t recommend using. CommonMark and a few other lightweight markup languages let you type a backslash (`\`) at the end of the line, but not all Markdown applications support this, so it isn’t a great option from a compatibility perspective. And at least a couple lightweight markup languages don’t require anything at the end of the line — just type return and they’ll create a line break.
 
-| ✅ Do this                                                    | ❌ Don't do this                                              |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ✅ Do this | ❌ Don't do this |
+| --- | --- |
 | <pre>First line with two spaces after.  <br>And the next line.<br><br>First line with the HTML tag after.&lt;br&gt;<br>And the next line.</pre> | <pre>First line with a backslash after.\\<br>And the next line.<br><br>First line with nothing after.<br>And the next line.</pre> |
 
 ## Emphasis
@@ -76,8 +83,8 @@ You can add emphasis by making text bold or italic.
 
 To bold text, add two asterisks or underscores before and after a word or phrase. To bold the middle of a word for emphasis, add two asterisks without spaces around the letters.
 
-| Markdown                     | HTML                     | Rendered Output            |
-| ---------------------------- | ------------------------ | -------------------------- |
+| Markdown | HTML | Rendered Output |
+| --- | --- | --- |
 | `I just love **bold text**.` | <pre>I just love &lt;strong&gt;bold text&lt;/strong&gt;.</pre> | I just love **bold text**. |
 | `I just love __bold text__.` | <pre>I just love &lt;strong&gt;bold text&lt;/strong&gt;.</pre> | I just love __bold text__. |
 | `Love**is**bold`             | <pre>Love&lt;strong&gt;is&lt;/strong&gt;bold</pre> | Love**is**bold             |
@@ -86,16 +93,16 @@ To bold text, add two asterisks or underscores before and after a word or phrase
 
 Markdown applications don’t agree on how to handle underscores in the middle of a word. For compatibility, use asterisks to bold the middle of a word for emphasis.
 
-| ✅ Do this        | ❌ Don't do this  |
-| ---------------- | ---------------- |
+| ✅ Do this | ❌ Don't do this |
+| --- | --- |
 | `Love**is**bold` | `Love__is__bold` |
 
 ### Italic
 
 To italicize text, add one asterisk or underscore before and after a word or phrase. To italicize the middle of a word for emphasis, add one asterisk without spaces around the letters.
 
-| Markdown                               | HTML                                 | Rendered Output                      |
-| -------------------------------------- | ------------------------------------ | ------------------------------------ |
+| Markdown | HTML | Rendered Output |
+| --- | --- | --- |
 | `Italicized text is the *cat's meow*.` | `Italicized text is the cat's meow.` | Italicized text is the *cat’s meow*. |
 | `Italicized text is the _cat's meow_.` | `Italicized text is the cat's meow.` | Italicized text is the *cat’s meow*. |
 | `A*cat*meow`                           | `Acatmeow`                           | A*cat*meow                           |
@@ -104,16 +111,16 @@ To italicize text, add one asterisk or underscore before and after a word or phr
 
 Markdown applications don’t agree on how to handle underscores in the middle of a word. For compatibility, use asterisks to italicize the middle of a word for emphasis.
 
-| ✅ Do this    | ❌ Don't do this |
-| ------------ | --------------- |
+| ✅ Do this | ❌ Don't do this |
+| --- | --- |
 | `A*cat*meow` | `A_cat_meow`    |
 
 ### Bold and Italic
 
 To emphasize text with bold and italics at the same time, add three asterisks or underscores before and after a word or phrase. To bold and italicize the middle of a word for emphasis, add three asterisks without spaces around the letters.
 
-| Markdown                                  | HTML                                | Rendered Output                          |
-| ----------------------------------------- | ----------------------------------- | ---------------------------------------- |
+| Markdown | HTML | Rendered Output |
+| --- | --- | --- |
 | `This text is ***really important***.`    | `This text is really important.`    | This text is ***really important\***.    |
 | `This text is ___really important___.`    | `This text is really important.`    | This text is ***really important\***.    |
 | `This text is __*really important*__.`    | `This text is really important.`    | This text is ***really important\***.    |
@@ -124,8 +131,8 @@ To emphasize text with bold and italics at the same time, add three asterisks or
 
 Markdown applications don’t agree on how to handle underscores in the middle of a word. For compatibility, use asterisks to bold and italicize the middle of a word for emphasis.
 
-| ✅ Do this                                 | ❌ Don't do this                           |
-| ----------------------------------------- | ----------------------------------------- |
+| ✅ Do this | ❌ Don't do this |
+| --- | --- |
 | `This is really***very***important text.` | `This is really___very___important text.` |
 
 ## Blockquotes
@@ -202,8 +209,8 @@ You can organize items into ordered and unordered lists.
 
 To create an ordered list, add line items with numbers followed by periods. The numbers don’t have to be in numerical order, but the list should start with the number one.
 
-| Markdown                                                     | HTML                                                         | Rendered Output                                              |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Markdown | HTML | Rendered Output |
+| --- | --- | --- |
 | `1. First item2. Second item3. Third item4. Fourth item`     | `First itemSecond itemThird itemFourth item`                 | First itemSecond itemThird itemFourth item                   |
 | `1. First item1. Second item1. Third item1. Fourth item`     | `First itemSecond itemThird itemFourth item`                 | First itemSecond itemThird itemFourth item                   |
 | `1. First item8. Second item3. Third item5. Fourth item`     | `First itemSecond itemThird itemFourth item`                 | First itemSecond itemThird itemFourth item                   |
@@ -213,8 +220,8 @@ To create an ordered list, add line items with numbers followed by periods. The 
 
 To create an unordered list, add dashes (`-`), asterisks (`*`), or plus signs (`+`) in front of line items. Indent one or more items to create a nested list.
 
-| Markdown                                                     | HTML                                                         | Rendered Output                                              |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Markdown | HTML | Rendered Output |
+| --- | --- | --- |
 | `- First item- Second item- Third item- Fourth item`         | `First itemSecond itemThird itemFourth item`                 | First itemSecond itemThird itemFourth item                   |
 | `* First item* Second item* Third item* Fourth item`         | `First itemSecond itemThird itemFourth item`                 | First itemSecond itemThird itemFourth item                   |
 | `+ First item* Second item- Third item+ Fourth item`         | `First itemSecond itemThird itemFourth item`                 | First itemSecond itemThird itemFourth item                   |
@@ -270,32 +277,31 @@ The rendered output looks like this:
 
 [Code blocks](https://www.markdownguide.org/basic-syntax/#code-blocks) are normally indented four spaces or one tab. When they’re in a list, indent them eight spaces or two tabs.
 
-```
+```markdown
 1.  Open the file.
-2.  Find the following code block on line 21:
+1.  Find the following code block on line 21:
 
         <html>
           <head>
             <title>Test</title>
           </head>
 
-3.  Update the title to match the name of your website.
+1.  Update the title to match the name of your website.
 ```
+
 
 The rendered output looks like this:
 
 1. Open the file.
 
-2. Find the following code block on line 21:
+1. Find the following code block on line 21:
 
-   ```
-   <html>
-     <head>
-       <title>Test</title>
-     </head>
-   ```
+        <html>
+            <head>
+                <title>Test</title>
+            </head>
 
-3. Update the title to match the name of your website.
+1. Update the title to match the name of your website.
 
 
 #### Images
@@ -323,16 +329,16 @@ The rendered output looks like this:
 
 To denote a word or phrase as code, enclose it in backticks (```).
 
-| Markdown                              | HTML                                | Rendered Output                     |
-| ------------------------------------- | ----------------------------------- | ----------------------------------- |
+| Markdown | HTML | Rendered Output |
+| --- | --- | --- |
 | <pre>At the command prompt, type \`nano\`.</pre> | <pre>At the command prompt, type &lt;code&gt;nano&lt;/code&gt;.</pre> | At the command prompt, type <code>nano</code>. |
 
 ### Escaping Backticks
 
 If the word or phrase you want to denote as code includes one or more backticks, you can escape it by enclosing the word or phrase in double backticks (````).
 
-| Markdown                                | HTML                                | Rendered Output                     |
-| --------------------------------------- | ----------------------------------- | ----------------------------------- |
+| Markdown | HTML | Rendered Output |
+| --- | --- | --- |
 | ```Use `code` in your Markdown file.``` | <pre>Use &lt;code&gt;code&lt;/code&gt; in your Markdown file.</pre> | Use `code` in your Markdown file. |
 
 ### Code Blocks
@@ -383,8 +389,8 @@ ___
 
 For compatibility, put blank lines before and after horizontal rules.
 
-| ✅ Do this                                                    | ❌ Don't do this                                              |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ✅ Do this | ❌ Don't do this |
+| --- | --- |
 | <pre>Try to put a blank line before...<br><br>---<br><br>...and after a horizontal rule.</pre> | <pre>Without blank lines, this would be a heading.<br>---<br>Don't do this!</pre> |
 
 ## Links
@@ -510,8 +516,8 @@ and the HTML for the link would be:
 
 Markdown applications don’t agree on how to handle spaces in the middle of a URL. For compatibility, try to URL encode any spaces with `%20`.
 
-| ✅ Do this                                           | ❌ Don't do this                                 |
-| --------------------------------------------------- | ----------------------------------------------- |
+| ✅ Do this | ❌ Don't do this |
+| --- | --- |
 | `[link](https://www.example.com/my%20great%20page)` | `[link](https://www.example.com/my great page)` |
 
 ## Images
@@ -590,4 +596,3 @@ For security reasons, not all Markdown applications support HTML in Markdown doc
 Use blank lines to separate block-level HTML elements like &lt;div&gt;, &lt;table&gt;, &lt;pre&gt;, and &lt;p&gt; from the surrounding content. Try not to indent the tags with tabs or spaces — that can interfere with the formatting.
 
 You can’t use Markdown syntax inside block-level HTML tags. For example, &lt;p&gt;italic and \*\*bold\*\*&lt;/p&gt; won’t work.
-
