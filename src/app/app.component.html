@@ -7,19 +7,6 @@
 <p>The editor with default settings.</p>
 
 <easymde [(ngModel)]="demo"></easymde>
-<markdown [data]="demoCode"></markdown>
-
-<h2>Within a Modal Dialog</h2>
-
-<p>Display the editor in a modal dialog.</p>
-
-<button class="btn btn-primary" (click)="ngxSmartModalService.getModal('exampleModal').open()">Display Dialog</button>
-<ngx-smart-modal #exampleModal identifier="exampleModal">
-  <easymde [(ngModel)]="modal"></easymde>
-  <button (click)="exampleModal.close()">Close</button>
-</ngx-smart-modal>
-
-<markdown [data]="modalCode"></markdown>
 
 <h2>With a Customized Toolbar</h2>
 
@@ -28,7 +15,6 @@
   [(ngModel)]="customize"
   [options]="{ toolbar: ['bold', 'italic', 'heading', '|', 'quote', '|', 'preview'] }">
 </easymde>
-<markdown [data]="customizeCode"></markdown>
 
 <h2>With Autosaving</h2>
 
@@ -39,7 +25,6 @@
   [(ngModel)]="autoSaving"
   [options]="autoSavingOptions">
 </easymde>
-<markdown [data]="autoSavingCode"></markdown>
 
 <h2>With Hidden Toolbar and Status Bar</h2>
 
@@ -47,7 +32,6 @@
   [(ngModel)]="hiddenToolbar"
   [options]="{ toolbar: false, status: false, renderingConfig: { codeSyntaxHighlighting: true } }">
 </easymde>
-<markdown [data]="hiddenToolbarCode"></markdown>
 
 <h2>With Event Handling</h2>
 
@@ -56,7 +40,6 @@
   (onChange)="onChange($event)"
   (onBlur)="onBlur($event)">
 </easymde>
-<markdown [data]="eventContentCode"></markdown>
 
 <h2>Within Reactive Forms</h2>
 
@@ -70,4 +53,3 @@ You're not limitied to template driven forms; the component also works with reac
   <button class="btn btn-primary" type="submit" [disabled]="fg.invalid">Submit</button>
   <button class="btn" (click)="setDisabledForForm()">{{this.buttonText}}</button>
 </form>
-<markdown [data]="reactiveFormsCode"></markdown>

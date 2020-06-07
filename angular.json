@@ -29,19 +29,10 @@
             ],
             "styles": [
               "node_modules/easymde/dist/easymde.min.css",
-              "node_modules/codemirror/theme/xq-light.css",
-              "node_modules/prismjs/themes/prism-solarizedlight.css",
-              "node_modules/ngx-smart-modal/ngx-smart-modal.css",
               "src/styles.less"
             ],
             "scripts": [
-              "node_modules/easymde/dist/easymde.min.js",
-              "node_modules/marked/lib/marked.js",
-              "node_modules/prismjs/prism.js",
-              "node_modules/prismjs/components/prism-javascript.js",
-              "node_modules/prismjs/components/prism-markdown.js",
-              "node_modules/prismjs/components/prism-markup.js",
-              "node_modules/prismjs/components/prism-typescript.js"
+              "node_modules/easymde/dist/easymde.min.js"
             ]
           },
           "configurations": {
@@ -94,11 +85,11 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "styles": [
+              "node_modules/easymde/dist/easymde.min.css",
               "src/styles.less"
             ],
             "scripts": [
-              "node_modules/easymde/dist/easymde.min.js",
-              "node_modules/marked/lib/marked.js"
+              "node_modules/easymde/dist/easymde.min.js"
             ],
             "assets": []
           }
