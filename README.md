@@ -38,11 +38,13 @@ An Angular wrapper for the [Easy MarkDown Editor](https://easymde.tk/) originall
 
    ```typescript
        EasymdeModule.forRoot({
-         autosave: { enabled: true, delay: 10000 },
-         hideIcons: ['side-by-side'],
-         renderingConfig: { codeSyntaxHighlighting: true }
-       })
-   ```
+         options: {
+           autosave: { enabled: true, delay: 10000 },
+           hideIcons: ['side-by-side'],
+           renderingConfig: { codeSyntaxHighlighting: true },
+         },
+       }),
+    ```
 
 1. Add `easymde.min.js` and styles to `angular.json`.
 
