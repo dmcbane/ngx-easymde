@@ -45,11 +45,11 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
 4. And another item.
 
-⋅⋅⋅You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
+   You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
 
-⋅⋅⋅To have a line break without a paragraph, you will need to use two trailing spaces.⋅⋅
-⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅
-⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
+   To have a line break without a paragraph, you will need to use two trailing spaces.  
+   Note that this line is separate, but within the same paragraph.
+   (This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
 
 * Unordered list can use asterisks
 
@@ -79,11 +79,10 @@ example.com (but not on Github, for example).
 
 Some text to show that the reference links can follow later.
 
-[arbitrary case-insensitive reference text]: https://www.mozilla.org
-[1]: http://slashdot.org
-[link text itself]: http://www.reddit.com
+[arbitrary case-insensitive reference text]: https://www.mozilla.org/
+[link text itself][1]
 
-# Images
+[1]: http://slashdot.org	"Slashdot"
 
 Here's our logo (hover to see the title text):
 
@@ -97,7 +96,7 @@ Reference-style:
 
 # Code and Syntax Highlighting
 
-Inline `code` has `back-ticks around` it.  Code blocks are surrounded by triple back-ticks followed by the language (i.e. \`\`\`typescript). It supports all languages provided by [highlight.js](https://highlightjs.org)
+Inline `code` has `back-ticks around` it.  Code blocks are indicated by indenting using four (4) spaces or one (1) tab character.  If the code block is in a list, indent eight (8) characters or two (2) tab characters.  Fenced code blocks are surrounded by triple back-ticks followed by the language (i.e. \`\`\`typescript).  Easymde and therefore ngx-easymde supports all languages provided by [highlight.js](https://highlightjs.org)
 
 * typescript
 

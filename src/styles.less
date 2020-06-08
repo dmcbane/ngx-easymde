@@ -6,11 +6,20 @@
     margin-top: 0;
     margin-bottom: 1rem;
     font: 1rem Consolas,Menlo,'Andale Mono','Lucida Console','Lucida Sans Typewriter','DejaVu Sans Mono','Bitstream Vera Sans Mono','Liberation Mono','Nimbus Mono L',Monaco,'Courier New',Courier,monospace;
+    word-wrap: normal;
+    border-style: none;
+  }
+
+  .code pre, code {
+    font: 1rem Consolas,Menlo,'Andale Mono','Lucida Console','Lucida Sans Typewriter','DejaVu Sans Mono','Bitstream Vera Sans Mono','Liberation Mono','Nimbus Mono L',Monaco,'Courier New',Courier,monospace;
     color: #0e445d;
     word-wrap: normal;
-    background-color: #dfdfdf;
-    border: solid 1px #dce6f0;
+    background-color: #f0f0f0;
+    border: none 0;
     border-radius: 0.3rem;
+  }
+  .code pre {
+    border: solid 1px #d1d1d1;
   }
 }
 
@@ -60,4 +69,16 @@ h6 {
 .cm-spell-error {
   text-decoration: underline;
   text-decoration-color: red;
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote p {
+  display: inline;
 }
