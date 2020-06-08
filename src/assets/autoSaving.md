@@ -47,7 +47,7 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
    You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
 
-   To have a line break without a paragraph, you will need to use two trailing spaces.  
+   To have a line break without a paragraph, you will need to use two trailing spaces.
    Note that this line is separate, but within the same paragraph.
    (This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
 
@@ -100,6 +100,8 @@ Inline `code` has `back-ticks around` it.  Code blocks are indicated by indentin
 
 * typescript
 
+  <div class="code">
+
   ```ts
   import { EasymdeModule } from 'ngx-easymde';
 
@@ -115,25 +117,39 @@ Inline `code` has `back-ticks around` it.  Code blocks are indicated by indentin
   export class AppModule { }
   ```
 
+  </div>
+
 * javascript
+
+  <div class="code">
 
   ```javascript
   var s = "JavaScript syntax highlighting";
   alert(s);
   ```
 
+  </div>
+
 * python
+
+  <div class="code">
 
   ```python
   s = "Python syntax highlighting"
   print s
   ```
 
+  </div>
+
 * When no language is indicated...
+
+  <div class="code">
 
   ```
   <a href="https://highlightjs.org"><b>highlight.js</b></a> guesses...
   ```
+
+  </div>
 
 # Blockquotes
 
