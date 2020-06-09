@@ -1,11 +1,19 @@
 @import '../lib/index';
 
-$code-background-color: #f0f0f0;
+$body-background-color: #f4f3f2;
+$code-background-color: #f5f5f5;
 $code-foreground-color: #0e445d;
 $code-pre-border-color: #d1d1d1;
 $codemirror-error-text-decoration-color: #f00;
 $blockquote-background-color: #f9f9f9;
 $blockquote-border-left-color: #ccc;
+$editor-toolbar-background-color: #ecebea;
+$heading-text-color: #2f4f4f;
+$link-text-color: #4682b4;
+
+.editor-toolbar {
+  background-color: $editor-toolbar-background-color;
+}
 
 .editor-preview {
   pre {
@@ -33,7 +41,16 @@ $blockquote-border-left-color: #ccc;
 }
 
 body {
+  background-color: $body-background-color;
   font: 1rem Constantia,'Lucida Bright',Lucidabright,'Lucida Serif',Lucida,'DejaVu Serif','Bitstream Vera Serif','Liberation Serif',Georgia,serif;
+}
+
+a {
+  color: $link-text-color;
+
+  &:visited {
+    color: $link-text-color;
+  }
 }
 
 h1,
@@ -42,6 +59,7 @@ h3,
 h4,
 h5,
 h6 {
+  color: $heading-text-color;
   font-family: Corbel,'Lucida Grande','Lucida Sans Unicode','DejaVu Sans','Bitstream Vera Sans','Liberation Sans',Verdana,'Verdana Ref',sans-serif;
 }
 
