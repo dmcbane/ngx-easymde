@@ -49,7 +49,7 @@ An Angular wrapper for the [Easy MarkDown Editor](https://easymde.tk/) originall
    ```json
    "styles": [
      "node_modules/easymde/dist/easymde.min.css",
-     "src/styles.less"
+     "src/styles.scss"
    ],
    "scripts": [
      "node_modules/easymde/dist/easymde.min.js"
@@ -58,9 +58,9 @@ An Angular wrapper for the [Easy MarkDown Editor](https://easymde.tk/) originall
 
 1. Add easymde style.
 
-   ```less
-   // src/style.less
-   @import '~ngx-easymde/lib/index.less';
+   ```scss
+   // src/style.scss
+   @import '~ngx-easymde/lib/index.scss';
    // Change existing parameters here:
    @easymde-icon-url: 'icons.zip';
    @easymde-statusbar-lines: 'lines:';

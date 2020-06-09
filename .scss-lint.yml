@@ -1,0 +1,17 @@
+scss_files:
+  - 'lib/**/*.scss'
+  - 'src/**/*.scss'
+
+linters:
+  BorderZero:
+    enabled: false
+
+  Indentation:
+    severity: warning
+    width: 2
+
+  SelectorFormat:
+    enabled: false
+
+  VendorPrefix:
+    enabled: false

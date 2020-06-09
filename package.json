@@ -83,7 +83,7 @@
   "ngPackage": {
     "assets": [
       "lib/styles",
-      "lib/index.less"
+      "lib/index.scss"
     ],
     "lib": {
       "entryFile": "lib/index.ts"
