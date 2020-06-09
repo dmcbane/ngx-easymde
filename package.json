@@ -30,7 +30,7 @@
     "release": "npm run build && cd publish && npm publish --access public",
     "release:next": "npm run build && cd publish && npm publish --access public --tag next",
     "site:build": "ng build --prod --build-optimizer",
-    "site:gh": "ng build --prod --build-optimizer --base-href /gnx-easymde/ && ng deploy",
+    "site:gh": "ng build --prod --build-optimizer --base-href /ngx-easymde/ && ng deploy",
     "start": "ng serve",
     "test": "ng test --watch=false",
     "test:coverage": "ng test --code-coverage --watch=false"
